@@ -1,0 +1,2 @@
+module Sable::Command
+end
