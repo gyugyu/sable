@@ -20,17 +20,17 @@ class Sable::GCloud
   end
 
   def create_service_account(service_account)
-    `echo 'cloud iam service-accounts create #{service_account.account} --display-name "#{service_account.display_name}"' >> stdout`
+    `gcloud iam service-accounts create #{service_account.account} --display-name "#{service_account.display_name}"`
     ensure_success
   end
 
   def update_service_account(service_account)
-    `echo 'cloud iam service-accounts update #{service_account.email} --display-name "#{service_account.display_name}"' >> stdout`
+    `gcloud iam service-accounts update #{service_account.email} --display-name "#{service_account.display_name}"`
     ensure_success
   end
 
   def delete_service_account(service_account)
-    `echo 'cloud iam service-accounts delete #{service_account.email}' >> stdout`
+    `gcloud iam service-accounts delete #{service_account.email}`
     ensure_success
   end
 
